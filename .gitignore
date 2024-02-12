@@ -1,6 +1,6 @@
 # compiled output
-build
-dist
+/build
+/dist
 tmp
 /out-tsc
 
