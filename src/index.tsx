@@ -1,10 +1,8 @@
 import {render} from "react-dom";
-import {Counter} from "./components/Counter/Counter";
+import {App} from "./components/App";
+import './index.scss';
 
 render(
-    <div>
-        <p>Hello from React!</p>
-        <Counter/>
-    </div>,
+    <App/>,
     document.getElementById('root')
 );
