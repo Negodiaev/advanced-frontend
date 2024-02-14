@@ -1,6 +1,7 @@
 import {Suspense} from "react";
 import {Link, Route, Routes} from "react-router-dom";
 
+import {classNames} from "../helpers/classNames/classNames";
 import {Theme} from "../theme/ThemeContext";
 import {useTheme} from "../theme/useTheme";
 import {AboutPageLazy} from "../pages/AboutPage/AboutPageLazy";
@@ -12,7 +13,10 @@ export function App() {
     const {theme, toggleTheme} = useTheme();
 
     return (
-        <div className={`app ${theme === Theme.DARK ? ' dark' : ''}`}>
+        <div className={classNames('app', {
+            hovered: true,
+            selected: false
+        }, [theme === Theme.DARK ? Theme.DARK : ''])}>
             <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/about'>About</Link></li>
