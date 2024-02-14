@@ -1,0 +1,6 @@
+.app {
+  &.dark {
+    color: var(--secondary-color);
+    background-color: var(--bg-color-dark);
+  }
+}

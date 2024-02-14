@@ -1,0 +1,23 @@
+:root {
+  // typography
+  --font-family: Helvetica, Arial, Verdana, sans-serif;
+
+  --font-size-md: 16px;
+  --font-size-lg: 24px;
+
+  --line-height: 1.25;
+  --line-height-higher: 1.5;
+
+  --font-md: var(--font-size-md)/var(--line-height) var(--font-family);
+  --font-lg: var(--font-size-lg)/var(--line-height) var(--font-family);
+
+  --font-md-higher: var(--font-size-md)/var(--line-height-higher) var(--font-family);
+  --font-lg-higher: var(--font-size-lg)/var(--line-height-higher) var(--font-family);
+
+  // colors
+  --bg-color: #F5EDF0;
+  --bg-color-dark: #3D2C2E;
+  --primary-color: #424C55;
+  --secondary-color: #D1CCDC;
+  --decor-color: #886F68;
+}

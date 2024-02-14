@@ -1,0 +1,28 @@
+@use "reset";
+@use "variables/global";
+@use "themes/default";
+@use "themes/dark";
+
+html {
+  height: 100%;
+}
+
+body {
+  font: var(--font-md);
+  font-style: normal;
+  font-weight: 400;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.app {
+  min-height: 100dvh;
+  min-height: 100vh;
+}
