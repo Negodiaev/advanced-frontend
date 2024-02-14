@@ -3,7 +3,8 @@ import {Link, Route, Routes} from "react-router-dom";
 
 import {AboutPageLazy} from "../pages/AboutPage/AboutPageLazy";
 import {MainPageLazy} from "../pages/MainPage/MainPageLazy";
-import {Counter} from "./Counter/Counter";
+
+// import {Counter} from "./Counter/Counter";
 
 export function App() {
     return (
@@ -22,8 +23,8 @@ export function App() {
                         harum,
                         ipsum libero minus numquam obcaecati officiis similique sunt suscipit tempora voluptate,
                         voluptatum.</p>
+                        <Counter/>
                     */}
-                    <Counter/>
                 </Routes>
             </Suspense>
         </div>
