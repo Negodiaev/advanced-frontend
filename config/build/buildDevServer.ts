@@ -4,6 +4,7 @@ import {IBuildOptions} from "./types/config";
 export function buildDevServer(options: IBuildOptions): DevServerConfiguration {
     return {
         port: options.port,
-        open: true
+        open: true,
+        historyApiFallback: true
     }
 }
