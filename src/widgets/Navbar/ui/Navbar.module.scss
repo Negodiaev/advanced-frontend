@@ -1,0 +1,30 @@
+$gap: 16px;
+
+%row {
+  display: flex;
+  align-items: center;
+}
+
+.root {
+  @extend %row;
+  justify-content: space-between;
+  padding: $gap;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--color-bg-secondary);
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.colRight {
+  @extend %row;
+  gap: $gap * 2;
+}
+
+.menu {
+  @extend %row;
+  list-style: none;
+  gap: $gap;
+}

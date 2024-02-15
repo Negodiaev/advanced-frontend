@@ -14,10 +14,27 @@
   --font-md-higher: var(--font-size-md)/var(--line-height-higher) var(--font-family);
   --font-lg-higher: var(--font-size-lg)/var(--line-height-higher) var(--font-family);
 
-  // colors
-  --bg-color: #F5EDF0;
-  --bg-color-dark: #3D2C2E;
-  --primary-color: #424C55;
-  --secondary-color: #D1CCDC;
-  --decor-color: #886F68;
+  // Backgrounds
+  --color-bg: #FFFFFF; // Main background
+  --color-bg-secondary: #F0F2F5; // Secondary background for paddings and separators
+
+  // Text
+  --color-text: #333333; // Main text
+  --color-text-secondary: #65676B; // Secondary text
+
+  // UI elements
+  --color-border: #DADCE0; // Borders and separators
+  --color-primary: #007BFF; // Primary accent color
+  --color-primary-light: #E7F1FF; // Light shade of primary color for backgrounds
+
+  // Statuses
+  --color-success: #28A745; // Success, confirmations
+  --color-error: #DC3545; // Errors, warnings
+  --color-warning: #FFC107; // Warning
+
+  // Additional
+  --color-info: #17A2B8; // Informational
+
+  // Sizes
+  --navbar-height: 50px;
 }

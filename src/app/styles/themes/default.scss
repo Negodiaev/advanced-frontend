@@ -1,8 +1,13 @@
-body {
-  color: var(--primary-color);
-  background-color: var(--bg-color);
+.app {
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 a {
-  color: var(--decor-color);
+  color: var(--color-primary);
+
+  &:hover,
+  &:active {
+    color: var(--color-info);
+  }
 }

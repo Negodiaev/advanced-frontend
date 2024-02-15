@@ -1,6 +1,24 @@
 .app {
   &.dark {
-    color: var(--secondary-color);
-    background-color: var(--bg-color-dark);
+    // Backgrounds
+    --color-bg: #121212; // Main background
+    --color-bg-secondary: #242526; // Secondary background for paddings and separators
+
+    // Text
+    --color-text: #E0E0E0; // Main text
+    --color-text-secondary: #B0B3B8; // Secondary text
+
+    // UI elements
+    --color-border: #343637; // Borders and separators
+    --color-primary: #FFD700; // Primary accent color
+    --color-primary-light: #FFD700; // Light shade of primary color can be the same given the dark theme
+
+    // Statuses
+    --color-success: #20C997; // Success, confirmations
+    --color-error: #F44336; // Errors, warnings
+    --color-warning: #FFC107; // Warning
+
+    // Additional
+    --color-info: #29B6F6; // Informational
   }
 }
