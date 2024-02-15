@@ -1,11 +1,9 @@
-import {Suspense} from "react";
-import {Link, Route, Routes} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import {classNames} from "shared/lib/classNames/classNames";
 import {Theme} from "app/providers/ThemeProvider/lib/ThemeContext";
 import {useTheme} from "app/providers/ThemeProvider";
-import {AboutPage} from "pages/AboutPage";
-import {MainPage} from "pages/MainPage";
+import {AppRouter} from "app/providers/router";
 import './styles/index.scss';
 
 export function App() {
@@ -21,12 +19,7 @@ export function App() {
                 <li><Link to='/about'>About</Link></li>
             </ul>
             <button onClick={toggleTheme}>Toggle theme</button>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path='/about' element={<AboutPage/>}/>
-                    <Route path='/' element={<MainPage/>}/>
-                </Routes>
-            </Suspense>
+            <AppRouter/>
         </div>
     );
 }
