@@ -1,6 +1,6 @@
-import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {Link} from "shared/ui/Link";
+import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -8,8 +8,6 @@ interface INavbarProps {
 }
 
 export function Navbar({className}: INavbarProps) {
-    const {toggleTheme} = useTheme();
-
     return (
         <div className={classNames(styles.root, {}, [className])}>
             <a href="#" className={styles.logo}>Logo</a>
@@ -20,7 +18,7 @@ export function Navbar({className}: INavbarProps) {
                         <li><Link to='/about'>About</Link></li>
                     </ul>
                 </nav>
-                <button onClick={toggleTheme}>Toggle theme</button>
+                <ThemeSwitcher/>
             </div>
         </div>
     );
