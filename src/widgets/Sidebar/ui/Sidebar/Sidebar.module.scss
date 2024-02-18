@@ -1,0 +1,26 @@
+$offset: 16px;
+
+.root {
+  position: relative;
+  flex: 0 0 var(--sidebar-width);
+  padding: $offset $offset $offset*4;
+  height: calc(100dvh - var(--navbar-height));
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--color-bg-secondary);
+  transition: flex-basis .3s;
+}
+
+.isCollapsed {
+  flex-basis: var(--sidebar-width-collapsed);
+}
+
+.switchers {
+  position: absolute;
+  bottom: $offset;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $offset*2;
+  width: 100%;
+}

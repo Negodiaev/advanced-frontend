@@ -3,6 +3,7 @@ import {Theme} from "app/providers/ThemeProvider/lib/ThemeContext";
 import {useTheme} from "app/providers/ThemeProvider";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
 import './styles/index.scss';
 
 export function App() {
@@ -14,7 +15,12 @@ export function App() {
             selected: false
         }, [theme === Theme.DARK ? Theme.DARK : ''])}>
             <Navbar/>
-            <AppRouter/>
+            <div className='content'>
+                <Sidebar/>
+                <div className="main">
+                    <AppRouter/>
+                </div>
+            </div>
         </div>
     );
 }

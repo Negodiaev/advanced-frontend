@@ -1,6 +1,5 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import {Link} from "shared/ui/Link";
-import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
 import styles from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -18,7 +17,6 @@ export function Navbar({className}: INavbarProps) {
                         <li><Link to='/about'>About</Link></li>
                     </ul>
                 </nav>
-                <ThemeSwitcher/>
             </div>
         </div>
     );
