@@ -24,7 +24,7 @@ export const Link: FC<ILinkProps> = (props) => {
   } = props;
 
   return (
-    <RouterLink {...rest} to={to} className={classNames(styles.root, {}, [className, styles[theme]])}>
+    <RouterLink {...rest} to={to} className={classNames('', {}, [className, styles[theme]])}>
       {children}
     </RouterLink>
   );

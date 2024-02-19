@@ -3,17 +3,15 @@ $offset: 16px;
 .root {
   position: relative;
   flex: 0 0 var(--sidebar-width);
-  padding: $offset $offset $offset*4;
-  height: calc(100dvh - var(--navbar-height));
+  padding: $offset $offset $offset * 4;
   height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-secondary);
-  transition: flex-basis .3s;
+  transition: flex-basis 0.3s;
 
   &_collapsed {
     flex-basis: var(--sidebar-width-collapsed);
   }
 }
-
 
 .switchers {
   position: absolute;
@@ -22,7 +20,7 @@ $offset: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: $offset*2;
+  gap: $offset * 2;
   width: 100%;
 
   &_collapsed {

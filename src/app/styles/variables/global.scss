@@ -1,39 +1,35 @@
 :root {
   // typography
-  --font-family: Helvetica, Arial, Verdana, sans-serif;
-
+  --font-family: helvetica, arial, verdana, sans-serif;
   --font-size-md: 16px;
   --font-size-lg: 24px;
-
   --line-height: 1.25;
   --line-height-higher: 1.5;
-
-  --font-md: var(--font-size-md)/var(--line-height) var(--font-family);
-  --font-lg: var(--font-size-lg)/var(--line-height) var(--font-family);
-
-  --font-md-higher: var(--font-size-md)/var(--line-height-higher) var(--font-family);
-  --font-lg-higher: var(--font-size-lg)/var(--line-height-higher) var(--font-family);
+  --font-md: var(--font-size-md) / var(--line-height) var(--font-family);
+  --font-lg: var(--font-size-lg) / var(--line-height) var(--font-family);
+  --font-md-higher: var(--font-size-md) / var(--line-height-higher) var(--font-family);
+  --font-lg-higher: var(--font-size-lg) / var(--line-height-higher) var(--font-family);
 
   // Backgrounds
-  --color-bg: #FFFFFF; // Main background
-  --color-bg-secondary: #F0F2F5; // Secondary background for paddings and separators
+  --color-bg: #fff; // Main background
+  --color-bg-secondary: #f0f2f5; // Secondary background for paddings and separators
 
   // Text
-  --color-text: #333333; // Main text
-  --color-text-secondary: #65676B; // Secondary text
+  --color-text: #333; // Main text
+  --color-text-secondary: #65676b; // Secondary text
 
   // UI elements
-  --color-border: #DADCE0; // Borders and separators
-  --color-primary: #007BFF; // Primary accent color
-  --color-primary-light: #E7F1FF; // Light shade of primary color for backgrounds
+  --color-border: #dadce0; // Borders and separators
+  --color-primary: #007bff; // Primary accent color
+  --color-primary-light: #e7f1ff; // Light shade of primary color for backgrounds
 
   // Statuses
-  --color-success: #28A745; // Success, confirmations
-  --color-error: #DC3545; // Errors, warnings
-  --color-warning: #FFC107; // Warning
+  --color-success: #28a745; // Success, confirmations
+  --color-error: #dc3545; // Errors, warnings
+  --color-warning: #ffc107; // Warning
 
   // Additional
-  --color-info: #17A2B8; // Informational
+  --color-info: #17a2b8; // Informational
 
   // Sizes
   --navbar-height: 50px;

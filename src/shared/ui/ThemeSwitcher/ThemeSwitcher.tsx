@@ -15,7 +15,7 @@ export function ThemeSwitcher({ className }: IThemeSwitcherProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button className={classNames(styles.root, {}, [className])} onClick={toggleTheme}>
+    <Button className={classNames('', {}, [className])} onClick={toggleTheme}>
       {theme === Theme.LIGHT ? <MoonIcon className={styles.icon} /> : <SunIcon className={styles.icon} />}
     </Button>
   );
