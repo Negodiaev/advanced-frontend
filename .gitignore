@@ -3,6 +3,7 @@
 /dist
 tmp
 /out-tsc
+/extractedTranslations
 
 # dependencies
 node_modules
