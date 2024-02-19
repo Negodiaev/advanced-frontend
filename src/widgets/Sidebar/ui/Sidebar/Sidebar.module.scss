@@ -8,11 +8,12 @@ $offset: 16px;
   height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-secondary);
   transition: flex-basis .3s;
+
+  &_collapsed {
+    flex-basis: var(--sidebar-width-collapsed);
+  }
 }
 
-.isCollapsed {
-  flex-basis: var(--sidebar-width-collapsed);
-}
 
 .switchers {
   position: absolute;
@@ -23,4 +24,8 @@ $offset: 16px;
   align-items: center;
   gap: $offset*2;
   width: 100%;
+
+  &_collapsed {
+    flex-direction: column;
+  }
 }

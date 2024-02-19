@@ -1,3 +1,4 @@
+import {Suspense} from "react";
 import {classNames} from "shared/lib/classNames/classNames";
 import {Theme} from "app/providers/ThemeProvider/lib/ThemeContext";
 import {useTheme} from "app/providers/ThemeProvider";
@@ -14,13 +15,15 @@ export function App() {
             hovered: true,
             selected: false
         }, [theme === Theme.DARK ? Theme.DARK : ''])}>
-            <Navbar/>
-            <div className='content'>
-                <Sidebar/>
-                <div className="main">
-                    <AppRouter/>
+            <Suspense fallback="">
+                <Navbar/>
+                <div className='content'>
+                    <Sidebar/>
+                    <div className="main">
+                        <AppRouter/>
+                    </div>
                 </div>
-            </div>
+            </Suspense>
         </div>
     );
 }
