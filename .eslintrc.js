@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -26,8 +27,9 @@ module.exports = {
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
-    'max-len': [1, { code: 120 }],
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'max-len': [1, { code: 120, ignoreComments: true }],
+    // detect literal strings only in text, not in attributes
+    'i18next/no-literal-string': ['error', { onlyAttribute: [''] }],
     'no-unused-vars': 'warn',
     'react/jsx-props-no-spreading': 'warn',
     'import/extensions': 'off',

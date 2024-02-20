@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
@@ -9,6 +11,7 @@ interface ISidebarProps {
 }
 
 export function Sidebar({ className }: ISidebarProps) {
+  const { t } = useTranslation('sidebar');
   const [isCollapsed, setCollapsed] = useState<boolean>(false);
 
   function handleToggle() {
@@ -17,7 +20,7 @@ export function Sidebar({ className }: ISidebarProps) {
 
   return (
     <div className={classNames(styles.root, { [styles.root_collapsed]: isCollapsed }, [className])}>
-      <button onClick={handleToggle}>Toggle</button>
+      <button onClick={handleToggle}>{t('Toggle')}</button>
       <div className={classNames(styles.switchers, { [styles.switchers_collapsed]: isCollapsed })}>
         <ThemeSwitcher />
         <LangSwitcher />

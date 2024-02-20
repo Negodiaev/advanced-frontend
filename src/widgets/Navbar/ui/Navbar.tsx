@@ -12,7 +12,7 @@ export function Navbar({ className }: INavbarProps) {
 
   return (
     <div className={classNames(styles.root, {}, [className])}>
-      <a href="/" className={styles.logo}>Logo</a>
+      <a href="/" className={styles.logo}>{t('Logo')}</a>
       <div className={styles.colRight}>
         <nav>
           <ul className={styles.menu}>
