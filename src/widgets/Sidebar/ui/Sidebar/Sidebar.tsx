@@ -14,13 +14,16 @@ export function Sidebar({ className }: ISidebarProps) {
   const { t } = useTranslation('sidebar');
   const [isCollapsed, setCollapsed] = useState<boolean>(false);
 
-  function handleToggle() {
+  async function handleToggle() {
     setCollapsed((prevState) => !prevState);
   }
 
   return (
-    <div className={classNames(styles.root, { [styles.root_collapsed]: isCollapsed }, [className])}>
-      <button onClick={handleToggle}>{t('Toggle')}</button>
+    <div
+      className={classNames(styles.root, { [styles.root_collapsed]: isCollapsed }, [className])}
+      data-testid="sidebar"
+    >
+      <button data-testid="sidebar-toggle" onClick={handleToggle}>{t('Toggle')}</button>
       <div className={classNames(styles.switchers, { [styles.switchers_collapsed]: isCollapsed })}>
         <ThemeSwitcher />
         <LangSwitcher />
