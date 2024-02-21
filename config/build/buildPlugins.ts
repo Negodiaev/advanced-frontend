@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { IBuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: IBuildOptions): webpack.WebpackPluginInstance[] {
@@ -16,6 +17,8 @@ export function buildPlugins({ paths, isDev }: IBuildOptions): webpack.WebpackPl
       __IS_DEV__: JSON.stringify(isDev),
     }),
   ];
+  // this plugin is only for analysis
+  // plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
 
   if (isDev) {
     plugins.push(new ReactRefreshPlugin({ overlay: false }));
