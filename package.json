@@ -12,6 +12,7 @@
     "lint:scss": "npx stylelint '**/*.scss'",
     "lint:scss:fix": "npx stylelint '**/*.scss' --fix",
     "unit": "jest --config ./config/jest/jest.config.ts",
+    "unit:watch": "jest --config ./config/jest/jest.config.ts --watch",
     "lint:all": "npm run lint:ts && npm run lint:scss",
     "lint:all:fix": "npm run lint:ts:fix && npm run lint:scss:fix"
   },
