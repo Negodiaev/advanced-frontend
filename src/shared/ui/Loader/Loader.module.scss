@@ -2,7 +2,7 @@ $loader-size: 60px;
 $duration: 1.2s;
 
 .root {
-  --c: no-repeat linear-gradient(var(--color-bg-secondary) 0 0);
+  --c: no-repeat linear-gradient(var(--color-primary-light) 0 0);
 
   height: $loader-size;
   aspect-ratio: 1;

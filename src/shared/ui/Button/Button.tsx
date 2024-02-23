@@ -3,7 +3,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
 export enum ButtonVariant {
-    CLEAR = 'clear'
+    DEFAULT = 'default',
+    CLEAR = 'clear',
+    OUTLINED = 'outlined'
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,7 +15,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: FC<IButtonProps> = (props) => {
   const {
-    type = 'button', variant = ButtonVariant.CLEAR, className, children, ...rest
+    type = 'button', variant = ButtonVariant.DEFAULT, className, children, ...rest
   } = props;
 
   return (

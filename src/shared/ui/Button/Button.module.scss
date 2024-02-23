@@ -1,12 +1,28 @@
+%no-bg {
+  background: none;
+}
+
 .root {
   display: inline-flex;
+  padding: 8px 16px;
+  border: 0;
   cursor: pointer;
+  user-select: none;
   color: var(--color-primary);
 }
 
 .clear {
+  @extend %no-bg;
+
   padding: 0;
   border: 0;
   outline: 0;
-  background: none;
+}
+
+.outlined {
+  @extend %no-bg;
+
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-border);
 }

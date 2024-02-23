@@ -2,14 +2,15 @@ $offset: 16px;
 
 .root {
   position: relative;
-  flex: 0 0 var(--sidebar-width);
+  flex: 0 0 auto;
   padding: $offset $offset $offset * 4;
+  width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-secondary);
-  transition: flex-basis 0.3s;
+  transition: width 0.3s;
 
   &_collapsed {
-    flex-basis: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
   }
 }
 

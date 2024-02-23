@@ -11,11 +11,7 @@ export function App() {
   const { theme } = useTheme();
 
   return (
-    <div className={classNames('app', {
-      hovered: true,
-      selected: false,
-    }, [theme === Theme.DARK ? Theme.DARK : ''])}
-    >
+    <div className={classNames('app', {}, [theme === Theme.DARK ? Theme.DARK : ''])}>
       <Suspense fallback="">
         <Navbar />
         <div className="content">

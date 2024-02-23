@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { Button, ButtonVariant } from 'shared/ui/Button';
 
 // This component is only for testing
 export function BugButton() {
@@ -18,6 +18,6 @@ export function BugButton() {
   };
 
   return (
-    <Button onClick={throwError}>{t('Throw Error')}</Button>
+    <Button variant={ButtonVariant.OUTLINED} onClick={throwError}>{t('Throw Error')}</Button>
   );
 }
