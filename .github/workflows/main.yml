@@ -4,6 +4,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
 jobs:
   Pipeline:
     runs-on: ubuntu-latest
@@ -16,13 +17,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+
+      - name: Install modules
         run: npm install
-      - name: build production project
+
+      - name: Build a production project
         run: npm run build:prod
-      - name: linting typescript
+
+      - name: Lint Typescript
         run: npm run lint:ts
-      - name: linting css
+
+      - name: Lint CSS
         run: npm run lint:scss
-      - name: unit testing
+
+      - name: Unit testing
         run: npm run test:unit
