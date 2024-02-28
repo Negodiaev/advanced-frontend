@@ -1,22 +1,24 @@
 name: Linting, testing, building
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  Pipeline:
+  pipeline:
+    name: Pipeline
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 20.10.0 ]
+    timeout-minutes: 10
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - name: Setup node from node version file
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
 
       - name: Install modules
         run: npm install
