@@ -93,6 +93,7 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
+    "chromeTolerance": 0.5,
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
@@ -105,10 +106,6 @@
         "target": "chrome.app",
         "preset": "iPhone 7"
       }
-    },
-    "diffingEngine": "pixelmatch",
-    "pixelmatch": {
-      "threshold": 0.1
     }
   }
 }

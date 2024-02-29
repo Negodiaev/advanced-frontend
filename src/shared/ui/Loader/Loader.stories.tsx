@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { Loader } from './Loader';
 
 const meta: Meta<typeof Loader> = {
-  title: 'widgets/Loader',
+  title: 'shared/Loader',
   component: Loader,
   tags: ['autodocs'],
 };

@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { Link, LinkTheme } from './Link';
 
 const meta: Meta<typeof Link> = {
-  title: 'widgets/Link',
+  title: 'shared/Link',
   component: Link,
   tags: ['autodocs'],
   args: { to: '/', children: 'link' },
