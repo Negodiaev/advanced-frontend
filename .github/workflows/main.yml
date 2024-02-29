@@ -26,18 +26,23 @@ jobs:
       - name: Build a production project
         run: npm run build:prod
 
+        if: always()
       - name: Lint Typescript
         run: npm run lint:ts
 
+        if: always()
       - name: Lint CSS
         run: npm run lint:scss
 
+        if: always()
       - name: Unit testing
         run: npm run test:unit
 
 # TODO: figure out why screenshot tests fail in Github Actions
-#      - name: Build Storybook
-#        run: npm run storybook:build
-#
-#      - name: UI screenshot testing
-#        run: npm run test:ui:ci
+        if: always()
+      - name: Build Storybook
+        run: npm run storybook:build
+
+        if: always()
+      - name: UI screenshot testing
+        run: npm run test:ui:ci

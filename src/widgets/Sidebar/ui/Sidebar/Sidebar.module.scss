@@ -7,10 +7,47 @@ $offset: 16px;
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-secondary);
-  transition: width 0.3s;
+  transition: padding 0.3s, width 0.3s;
 
   &_collapsed {
+    padding-left: calc($offset / 2);
+    padding-right: calc($offset / 2);
     width: var(--sidebar-width-collapsed);
+  }
+}
+
+.toggleButton {
+  position: absolute;
+  bottom: 0;
+  right: calc(var(--font-size-xl) * -1.5);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: $offset;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: calc($offset / 2);
+  transition: color 0.3s;
+}
+
+.linkIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.linkText {
+  transition: all 0.2s;
+
+  &_hidden {
+    width: 0;
+    opacity: 0;
   }
 }
 

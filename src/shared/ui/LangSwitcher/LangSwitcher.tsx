@@ -5,10 +5,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonVariant } from 'shared/ui/Button';
 
 interface ILangSwitcherProps {
+    isShort?: boolean;
     className?: string;
 }
 
-export function LangSwitcher({ className }: ILangSwitcherProps) {
+export function LangSwitcher({ isShort = false, className }: ILangSwitcherProps) {
   const { t, i18n } = useTranslation();
 
   const toggleLang = useCallback(() => {
@@ -21,7 +22,7 @@ export function LangSwitcher({ className }: ILangSwitcherProps) {
       className={classNames('', {}, [className])}
       onClick={toggleLang}
     >
-      {t('Language')}
+      {t(!isShort ? 'Language' : 'Short lang')}
     </Button>
   );
 }

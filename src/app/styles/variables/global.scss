@@ -1,14 +1,20 @@
 :root {
   // typography
   --font-family: helvetica, arial, verdana, sans-serif;
+  --font-size-sm: 12px;
   --font-size-md: 16px;
   --font-size-lg: 24px;
+  --font-size-xl: 32px;
   --line-height: 1.25;
   --line-height-higher: 1.5;
+  --font-sm: var(--font-size-sm) / var(--line-height) var(--font-family);
   --font-md: var(--font-size-md) / var(--line-height) var(--font-family);
   --font-lg: var(--font-size-lg) / var(--line-height) var(--font-family);
+  --font-xl: var(--font-size-xl) / var(--line-height) var(--font-family);
+  --font-sm-higher: var(--font-size-sd) / var(--line-height-higher) var(--font-family);
   --font-md-higher: var(--font-size-md) / var(--line-height-higher) var(--font-family);
   --font-lg-higher: var(--font-size-lg) / var(--line-height-higher) var(--font-family);
+  --font-xl-higher: var(--font-size-xl) / var(--line-height-higher) var(--font-family);
 
   // Backgrounds
   --color-bg: #fff; // Main background
@@ -34,5 +40,5 @@
   // Sizes
   --navbar-height: 50px;
   --sidebar-width: 300px;
-  --sidebar-width-collapsed: 80px;
+  --sidebar-width-collapsed: 64px;
 }

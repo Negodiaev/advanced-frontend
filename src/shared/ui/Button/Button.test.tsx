@@ -9,6 +9,6 @@ describe('Button', () => {
 
   test('Test the "clear" variant', () => {
     render(<Button variant={ButtonVariant.CLEAR}>Test</Button>);
-    expect(screen.getByText('Test')).toHaveClass(ButtonVariant.CLEAR);
+    expect(screen.getByText('Test')).toHaveClass(`root_${ButtonVariant.CLEAR}`);
   });
 });

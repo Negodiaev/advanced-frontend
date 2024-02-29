@@ -5,24 +5,42 @@ import styles from './Button.module.scss';
 export enum ButtonVariant {
     DEFAULT = 'default',
     CLEAR = 'clear',
-    OUTLINED = 'outlined'
+    OUTLINED = 'outlined',
+    CONTAINED = 'contained',
+    CONTAINED_INVERTED = 'containedInverted',
+}
+
+export enum ButtonSize {
+    SM = 'sm',
+    MD = 'md',
+    LG = 'lg',
+    XL = 'xl',
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
+    isSquare?: boolean;
+    size?: ButtonSize;
     className?: string;
 }
 
 export const Button: FC<IButtonProps> = (props) => {
   const {
-    type = 'button', variant = ButtonVariant.DEFAULT, className, children, ...rest
+    type = 'button', variant = ButtonVariant.DEFAULT, isSquare = false, size = ButtonSize.MD, className, children, ...rest
   } = props;
+
+  const mods: Record<string, boolean> = {
+    [styles.root_squared]: isSquare,
+    [styles[`root_squared_${size}`]]: isSquare,
+  };
+
+  const additional: string[] = [className, styles[`root_${variant}`], styles[`root_size_${size}`]];
 
   return (
     <button
       {...rest}
       type={type}
-      className={classNames(styles.root, {}, [className, styles[variant]])}
+      className={classNames(styles.root, mods, additional)}
     >
       {children}
     </button>
