@@ -1,0 +1,46 @@
+$offset: 16px;
+$duration: 0.3s;
+$delay: 0.1s;
+
+.root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $duration $delay, z-index 0s $duration + $delay;
+
+  &_opened {
+    z-index: var(--z-index-modal);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity $duration;
+  }
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+}
+
+.content {
+  padding: $offset;
+  width: $offset * 50;
+  max-width: calc(100% - $offset * 2);
+  border-radius: $offset * 0.5;
+  background-color: var(--color-bg);
+  transform: scale(0.25);
+  transition: transform $duration;
+
+  &_visible {
+    transform: scale(1);
+    transition: transform $duration $delay;
+  }
+}

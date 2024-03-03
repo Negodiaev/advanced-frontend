@@ -36,9 +36,13 @@
 
   // Additional
   --color-info: #17a2b8; // Informational
+  --color-overlay: rgba(0 0 0 / 60%); // Mostly for modal backgrounds
 
   // Sizes
-  --navbar-height: 50px;
+  --navbar-height: 56px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 64px;
+
+  // Z-indexes
+  --z-index-modal: 10;
 }
