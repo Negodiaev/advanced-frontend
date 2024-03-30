@@ -31,6 +31,7 @@ module.exports = {
     'max-len': [1, { code: 120, ignoreComments: true }],
     // detect literal strings only in text, not in attributes
     'i18next/no-literal-string': ['error', { onlyAttribute: [''] }],
+    'no-param-reassign': 'warn',
     'no-unused-vars': 'warn',
     'react/jsx-props-no-spreading': 'warn',
     'import/extensions': 'off',

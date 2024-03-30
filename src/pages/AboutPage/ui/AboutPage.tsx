@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Counter } from 'entities/Counter';
 
 export default function AboutPage() {
   const { t } = useTranslation('about');
@@ -7,6 +8,7 @@ export default function AboutPage() {
     <div>
       <h1>{t('About page')}</h1>
       <p>{t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores deleniti ipsa omnis ullam? Accusamus ad, asperiores consequuntur cumque distinctio dolore doloremque ex in labore nihil nobis, quibusdam quos rerum saepe tenetur!')}</p>
+      <Counter />
     </div>
   );
 }
