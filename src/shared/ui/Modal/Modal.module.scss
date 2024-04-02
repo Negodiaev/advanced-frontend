@@ -35,6 +35,7 @@ $delay: 0.1s;
   width: $offset * 50;
   max-width: calc(100% - $offset * 2);
   border-radius: $offset * 0.5;
+  color: var(--color-text);
   background-color: var(--color-bg);
   transform: scale(0.25);
   transition: transform $duration;

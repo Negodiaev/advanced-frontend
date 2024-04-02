@@ -1,6 +1,7 @@
 import {
   FC, MouseEvent, useCallback, useEffect,
 } from 'react';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal';
 import styles from './Modal.module.scss';
@@ -15,6 +16,7 @@ export const Modal: FC<IModalProps> = (props) => {
   const {
     isOpen, children, className, onClose,
   } = props;
+  const { theme } = useTheme();
 
   const rootMods: Record<string, boolean> = {
     [styles.root_opened]: isOpen,
@@ -50,7 +52,7 @@ export const Modal: FC<IModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={classNames(styles.root, rootMods, [className])}>
+      <div className={classNames(styles.root, rootMods, [className, theme])}>
         <div className={styles.overlay} aria-hidden="true" onClick={handleClose}>
           <div
             className={classNames(styles.content, contentMods)}
