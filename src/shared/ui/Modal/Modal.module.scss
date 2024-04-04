@@ -32,7 +32,6 @@ $delay: 0.1s;
 
 .content {
   padding: $offset;
-  width: $offset * 50;
   max-width: calc(100% - $offset * 2);
   border-radius: $offset * 0.5;
   color: var(--color-text);

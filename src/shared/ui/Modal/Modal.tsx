@@ -1,22 +1,27 @@
 import {
-  FC, MouseEvent, useCallback, useEffect,
+  FC, MouseEvent, useCallback, useEffect, useState,
 } from 'react';
+
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal';
+
 import styles from './Modal.module.scss';
 
 interface IModalProps {
     isOpen: boolean;
+    lazy?: boolean;
     className?: string;
     onClose: () => void;
 }
 
 export const Modal: FC<IModalProps> = (props) => {
   const {
-    isOpen, children, className, onClose,
+    isOpen, children, lazy = false, className, onClose,
   } = props;
   const { theme } = useTheme();
+
+  const [isMounted, setMounted] = useState(false);
 
   const rootMods: Record<string, boolean> = {
     [styles.root_opened]: isOpen,
@@ -42,12 +47,22 @@ export const Modal: FC<IModalProps> = (props) => {
     };
   }, [isOpen, handleKeyDown]);
 
+  useEffect(() => {
+    if (isOpen) {
+      setMounted(isOpen);
+    }
+  }, [isOpen]);
+
   function handleClose() {
     onClose();
   }
 
   function handleContentClick(e: MouseEvent) {
     e.stopPropagation();
+  }
+
+  if (lazy && !isMounted) {
+    return null;
   }
 
   return (

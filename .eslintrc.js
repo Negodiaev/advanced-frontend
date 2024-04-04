@@ -34,6 +34,7 @@ module.exports = {
     'no-param-reassign': 'warn',
     'no-unused-vars': 'warn',
     'react/jsx-props-no-spreading': 'warn',
+    'jsx-a11y/no-autofocus': 'off',
     'import/extensions': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',

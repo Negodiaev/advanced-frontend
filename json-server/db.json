@@ -33,6 +33,12 @@
       "postId": "1"
     }
   ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin"
+    }
+  ],
   "profile": {
     "name": "Alex"
   }
