@@ -1,7 +1,9 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { getUserAuthData, userActions } from 'entities/User';
 import { Link } from 'shared/ui/Link';
 import { Button, ButtonVariant } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
@@ -14,7 +16,9 @@ interface INavbarProps {
 
 export function Navbar({ className }: INavbarProps) {
   const { t } = useTranslation('navbar');
+  const dispatch = useDispatch();
   const [isAuthVisible, setAuthVisible] = useState(false);
+  const authData = useSelector(getUserAuthData);
 
   const handleShowAuth = useCallback(() => {
     setAuthVisible(true);
@@ -23,6 +27,16 @@ export function Navbar({ className }: INavbarProps) {
   const handleHideAuth = useCallback(() => {
     setAuthVisible(false);
   }, []);
+
+  const handleLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (authData) {
+      setAuthVisible(false);
+    }
+  }, [authData]);
 
   return (
     <div className={classNames(styles.root, {}, [className])}>
@@ -34,9 +48,27 @@ export function Navbar({ className }: INavbarProps) {
             <li><Link to="/about">{t('About')}</Link></li>
           </ul>
         </nav>
-        <Button variant={ButtonVariant.CONTAINED_INVERTED} onClick={handleShowAuth}>{t('Log in')}</Button>
+        {authData
+          ? (
+            <Button
+              variant={ButtonVariant.OUTLINED}
+              onClick={handleLogout}
+            >
+              {t('Log out')}
+            </Button>
+          ) : (
+            <>
+              <Button
+                variant={ButtonVariant.CONTAINED_INVERTED}
+                onClick={handleShowAuth}
+              >
+                {t('Log in')}
+              </Button>
+              <LoginModal isOpen={isAuthVisible} onClose={handleHideAuth} />
+            </>
+          )}
       </div>
-      <LoginModal isOpen={isAuthVisible} onClose={handleHideAuth} />
+
     </div>
   );
 }

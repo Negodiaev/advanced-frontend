@@ -79,4 +79,8 @@
       height: calc(var(--font-size-xl) * 1.5);
     }
   }
+
+  &_disabled {
+    opacity: 0.5;
+  }
 }

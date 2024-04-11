@@ -1,0 +1,21 @@
+.root {
+  display: block;
+}
+
+.title {
+  font: var(--font-lg);
+  color: var(--color-text);
+
+  &_error {
+    color: var(--color-error);
+  }
+}
+
+.text {
+  font: var(--font-md);
+  color: var(--color-text-secondary);
+
+  &_error {
+    color: var(--color-error);
+  }
+}

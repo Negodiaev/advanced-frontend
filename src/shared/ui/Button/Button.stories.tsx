@@ -85,6 +85,14 @@ export const SquareXL: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    children: 'Disabled',
+    variant: ButtonVariant.CONTAINED,
+    disabled: true,
+  },
+};
+
 export const DefaultDark: Story = {
   args: {
     children: 'Default dark',
@@ -160,6 +168,15 @@ export const SquareXLDark: Story = {
     variant: ButtonVariant.CONTAINED_INVERTED,
     isSquare: true,
     size: ButtonSize.XL,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DisabledDark: Story = {
+  args: {
+    children: 'Disabled dark',
+    variant: ButtonVariant.CONTAINED,
+    disabled: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

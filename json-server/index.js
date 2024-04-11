@@ -5,6 +5,9 @@ const path = require('path');
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
+server.use(jsonServer.defaults());
+server.use(jsonServer.bodyParser);
+
 // some starting delay
 server.use(async (req, res, next) => {
   await new Promise((res) => {
@@ -13,19 +16,6 @@ server.use(async (req, res, next) => {
 
   next();
 });
-
-// check the authorization header
-// eslint-disable-next-line consistent-return
-server.use((req, res, next) => {
-  if (!req.header.authorization) {
-    return res.status(403).json({ message: 'AUTH_ERROR' });
-  }
-
-  next();
-});
-
-server.use(jsonServer.defaults());
-server.use(router);
 
 // an endpoint for the login
 server.post('/login', (req, res) => {
@@ -40,6 +30,18 @@ server.post('/login', (req, res) => {
 
   return res.status(403).json({ message: 'AUTH ERROR' });
 });
+
+// check the authorization header
+// eslint-disable-next-line consistent-return
+server.use((req, res, next) => {
+  if (!req.header.authorization) {
+    return res.status(403).json({ message: 'AUTH_ERROR' });
+  }
+
+  next();
+});
+
+server.use(router);
 
 // run the server
 server.listen(8000, () => {
