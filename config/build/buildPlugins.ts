@@ -17,12 +17,12 @@ export function buildPlugins({ paths, isDev }: IBuildOptions): webpack.WebpackPl
       __IS_DEV__: JSON.stringify(isDev),
     }),
   ];
-  // this plugin is only for analysis
-  // plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
 
   if (isDev) {
     plugins.push(new ReactRefreshPlugin({ overlay: false }));
     plugins.push(new webpack.HotModuleReplacementPlugin());
+    // this plugin is only for analysis
+    // plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
   }
 
   return plugins;

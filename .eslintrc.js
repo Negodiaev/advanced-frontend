@@ -33,6 +33,7 @@ module.exports = {
     'i18next/no-literal-string': ['error', { onlyAttribute: [''] }],
     'no-param-reassign': 'warn',
     'no-unused-vars': 'warn',
+    'react/jsx-no-useless-fragment': 'warn',
     'react/jsx-props-no-spreading': 'warn',
     'jsx-a11y/no-autofocus': 'off',
     'import/extensions': 'off',
