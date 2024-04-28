@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -9,7 +9,7 @@ interface ILangSwitcherProps {
     className?: string;
 }
 
-export function LangSwitcher({ isShort = false, className }: ILangSwitcherProps) {
+export const LangSwitcher = memo(({ isShort = false, className }: ILangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = useCallback(() => {
@@ -25,4 +25,4 @@ export function LangSwitcher({ isShort = false, className }: ILangSwitcherProps)
       {t(!isShort ? 'Language' : 'Short lang')}
     </Button>
   );
-}
+});

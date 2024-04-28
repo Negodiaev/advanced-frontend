@@ -41,6 +41,13 @@
     }
   ],
   "profile": {
-    "name": "Alex"
+    "name": "Alex",
+    "lastname": "Negodiaev",
+    "age": 32,
+    "currency": "USD",
+    "country": "USA",
+    "city": "San Francisco",
+    "username": "admin",
+    "avatar": "https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg"
   }
 }

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Text.module.scss';
 
@@ -13,9 +14,9 @@ interface ITextProps {
     className?: string;
 }
 
-export function Text({
+export const Text = memo(({
   title, text, theme = TextTheme.DEFAULT, className,
-}: ITextProps) {
+}: ITextProps) => {
   const isErrorTheme = theme === TextTheme.ERROR;
 
   return (
@@ -24,4 +25,4 @@ export function Text({
       {text && <p className={classNames(styles.text, { [styles.text_error]: isErrorTheme })}>{text}</p>}
     </div>
   );
-}
+});

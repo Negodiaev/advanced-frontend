@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { Link as RouterLink, LinkProps } from 'react-router-dom';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -14,7 +14,7 @@ interface ILinkProps extends LinkProps {
     theme?: LinkTheme;
 }
 
-export const Link: FC<ILinkProps> = (props) => {
+export const Link = memo((props: ILinkProps) => {
   const {
     to,
     children,
@@ -28,4 +28,4 @@ export const Link: FC<ILinkProps> = (props) => {
       {children}
     </RouterLink>
   );
-};
+});

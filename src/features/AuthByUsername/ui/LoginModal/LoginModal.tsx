@@ -21,7 +21,7 @@ export function LoginModal({ isOpen, className, onClose }: ILoginModalProps) {
     <Modal isOpen={isOpen} lazy className={classNames('', {}, [className])} onClose={onClose}>
       <div className={styles.root}>
         <h3 className={classNames(styles.title, {}, [styles.root__title])}>{t('Log in')}</h3>
-        <Suspense fallback={<Loader />}><LoginFormLazy /></Suspense>
+        <Suspense fallback={<Loader />}><LoginFormLazy onSuccess={onClose} /></Suspense>
       </div>
     </Modal>
   );

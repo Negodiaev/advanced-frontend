@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +14,7 @@ interface INavbarProps {
     className?: string;
 }
 
-export function Navbar({ className }: INavbarProps) {
+export const Navbar = memo(({ className }: INavbarProps) => {
   const { t } = useTranslation('navbar');
   const dispatch = useDispatch();
   const [isAuthVisible, setAuthVisible] = useState(false);
@@ -31,12 +31,6 @@ export function Navbar({ className }: INavbarProps) {
   const handleLogout = useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
-
-  useEffect(() => {
-    if (authData) {
-      setAuthVisible(false);
-    }
-  }, [authData]);
 
   return (
     <div className={classNames(styles.root, {}, [className])}>
@@ -68,7 +62,6 @@ export function Navbar({ className }: INavbarProps) {
             </>
           )}
       </div>
-
     </div>
   );
-}
+});

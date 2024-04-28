@@ -2,11 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
+import { noop } from 'shared/lib';
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
   title: 'feature/LoginForm',
   component: LoginForm,
+  args: {
+    onSuccess: noop,
+  },
 };
 
 export default meta;

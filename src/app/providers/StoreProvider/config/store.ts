@@ -18,3 +18,5 @@ export function createReduxStore(initialState?: IStateSchema, asyncReducers?: Re
 
   return store;
 }
+
+export type TAppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

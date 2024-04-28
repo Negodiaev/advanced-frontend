@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.3s;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.text {
+  &_hidden {
+    width: 0;
+    opacity: 0;
+  }
+}

@@ -1,25 +1,19 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonVariant } from 'shared/ui/Button';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ButtonSize } from 'shared/ui/Button/Button';
-import { Link } from 'shared/ui/Link';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-
-import HouseIcon from 'shared/assets/icons/house.svg';
-import InfoIcon from 'shared/assets/icons/info.svg';
-
+import { sidebarItemsList } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
 
 interface ISidebarProps {
     className?: string;
 }
 
-export function Sidebar({ className }: ISidebarProps) {
-  const { t } = useTranslation('sidebar');
+export const Sidebar = memo(({ className }: ISidebarProps) => {
   const [isCollapsed, setCollapsed] = useState<boolean>(false);
 
   const handleToggle = async () => {
@@ -43,26 +37,7 @@ export function Sidebar({ className }: ISidebarProps) {
       </Button>
       <nav>
         <ul className={styles.menu}>
-          <li>
-            <Link to={RoutePath.main} className={styles.link}>
-              <HouseIcon className={styles.linkIcon} />
-              <span
-                className={classNames(styles.linkText, { [styles.linkText_hidden]: isCollapsed })}
-              >
-                {t('Home')}
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to={RoutePath.about} className={styles.link}>
-              <InfoIcon className={styles.linkIcon} />
-              <span
-                className={classNames(styles.linkText, { [styles.linkText_hidden]: isCollapsed })}
-              >
-                {t('About')}
-              </span>
-            </Link>
-          </li>
+          {sidebarItemsList.map((item) => <li key={item.path}><SidebarItem item={item} collapsed={isCollapsed} /></li>)}
         </ul>
       </nav>
       <div className={classNames(styles.switchers, { [styles.switchers_collapsed]: isCollapsed })}>
@@ -71,4 +46,4 @@ export function Sidebar({ className }: ISidebarProps) {
       </div>
     </div>
   );
-}
+});
