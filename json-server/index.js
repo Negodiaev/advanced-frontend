@@ -19,22 +19,27 @@ server.use(async (req, res, next) => {
 
 // an endpoint for the login
 server.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
-  const { users } = db;
-  const userFormBd = users.find((user) => user.username === username && user.password === password);
+  try {
+    const { username, password } = req.body;
+    const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
+    const { users = [] } = db;
+    const userFromBd = users.find((user) => user.username === username && user.password === password);
 
-  if (userFormBd) {
-    return res.json(userFormBd);
+    if (userFromBd) {
+      return res.json(userFromBd);
+    }
+
+    return res.status(403).json({ message: 'User is not found' });
+  } catch (e) {
+    console.warn(e);
+    return res.status(500).json({ message: e.message });
   }
-
-  return res.status(403).json({ message: 'AUTH ERROR' });
 });
 
 // check the authorization header
 // eslint-disable-next-line consistent-return
 server.use((req, res, next) => {
-  if (!req.header.authorization) {
+  if (!req.headers.authorization) {
     return res.status(403).json({ message: 'AUTH_ERROR' });
   }
 

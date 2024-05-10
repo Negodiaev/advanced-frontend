@@ -1,6 +1,10 @@
-type TMods = Record<string, boolean | string>;
+export type TMods = Record<string, boolean | string | undefined>;
 
-export function classNames(cls: string, mods: TMods = {}, additional: string[] = []): string {
+export function classNames(
+  cls: string,
+  mods: TMods = {},
+  additional: Array<string | undefined> = [],
+): string {
   return [
     cls,
     ...additional.filter(Boolean),

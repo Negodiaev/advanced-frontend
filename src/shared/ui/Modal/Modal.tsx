@@ -3,8 +3,8 @@ import {
 } from 'react';
 
 import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Portal } from 'shared/ui/Portal';
+import { classNames, TMods } from '../../lib/classNames/classNames';
+import { Portal } from '../Portal/Portal';
 
 import styles from './Modal.module.scss';
 
@@ -23,11 +23,11 @@ export const Modal: FC<IModalProps> = (props) => {
 
   const [isMounted, setMounted] = useState(false);
 
-  const rootMods: Record<string, boolean> = {
+  const rootMods: TMods = {
     [styles.root_opened]: isOpen,
   };
 
-  const contentMods: Record<string, boolean> = {
+  const contentMods: TMods = {
     [styles.content_visible]: isOpen,
   };
 

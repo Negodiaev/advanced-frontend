@@ -37,6 +37,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'warn',
     'jsx-a11y/no-autofocus': 'off',
     'import/extensions': 'off',
+    'no-undef': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
     'import/no-unresolved': 'off',
@@ -51,6 +52,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

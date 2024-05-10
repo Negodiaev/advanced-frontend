@@ -1,0 +1,21 @@
+.root {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+
+  &__header {
+    margin-bottom: 24px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
