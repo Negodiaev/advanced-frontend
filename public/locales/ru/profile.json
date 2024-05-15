@@ -1,5 +1,11 @@
 {
   "Edit": "Редактировать",
   "Your name": "Ваше имя",
-  "Your last name": "Ваша фамилия"
+  "Your last name": "Ваша фамилия",
+  "An error occurred while uploading the profile": "При загрузке профиля произошла ошибка",
+  "Try to reload the page": "Попробуйте перезагрузить страницу",
+  "Your age": "Ваш возраст",
+  "Your city": "Ваш город",
+  "Your username": "Имя пользователя",
+  "Avatar URL": "Ссылка на аватар"
 }

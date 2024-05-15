@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
-import { Country, Currency } from 'shared/const/common';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
+import { Currency } from '../../../Currency/model/types/currency';
+import { Country } from '../../../Country/model/types/country';
 import { ProfileCard } from './ProfileCard';
 
 const profileData = {
@@ -18,7 +19,7 @@ const profileData = {
 };
 
 const meta: Meta<typeof ProfileCard> = {
-  title: 'shared/ProfileCard',
+  title: 'entities/ProfileCard',
   component: ProfileCard,
 };
 
@@ -31,5 +32,11 @@ export const Default: Story = {
 };
 
 export const DefaultDark: Story = {
-  decorators: [StoreDecorator({ profile: { data: profileData, isLoading: false, readonly: false } }), ThemeDecorator(Theme.DARK)],
+  decorators: [StoreDecorator({
+    profile: {
+      data: profileData,
+      isLoading: false,
+      readonly: false,
+    },
+  }), ThemeDecorator(Theme.DARK)],
 };

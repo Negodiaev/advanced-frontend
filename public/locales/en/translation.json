@@ -3,5 +3,11 @@
   "Language": "English",
   "Short lang": "En",
   "Loading": "Loading",
-  "The page was not found": "The page was not found"
+  "The page was not found": "The page was not found",
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Select currency": "Select currency",
+  "Select your country": "Select your country"
 }

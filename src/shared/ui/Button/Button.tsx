@@ -6,6 +6,7 @@ export enum ButtonVariant {
     DEFAULT = 'default',
     CLEAR = 'clear',
     OUTLINED = 'outlined',
+    OUTLINED_DANGER = 'outlinedDanger',
     CONTAINED = 'contained',
     CONTAINED_INVERTED = 'containedInverted',
 }
@@ -26,7 +27,14 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo((props: IButtonProps) => {
   const {
-    type = 'button', variant = ButtonVariant.DEFAULT, isSquare = false, size = ButtonSize.MD, disabled = false, className = '', children, ...rest
+    type = 'button',
+    variant = ButtonVariant.DEFAULT,
+    isSquare = false,
+    size = ButtonSize.MD,
+    disabled = false,
+    className = '',
+    children,
+    ...rest
   } = props;
 
   const mods: TMods = {

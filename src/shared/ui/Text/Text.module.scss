@@ -1,5 +1,13 @@
 .root {
   display: block;
+
+  &_right {
+    text-align: right;
+  }
+
+  &_center {
+    text-align: center;
+  }
 }
 
 .title {

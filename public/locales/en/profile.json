@@ -1,5 +1,11 @@
 {
   "Edit": "Edit",
   "Your name": "Your name",
-  "Your last name": "Your last name"
+  "Your last name": "Your last name",
+  "An error occurred while uploading the profile": "An error occurred while uploading the profile",
+  "Try to reload the page": "Try to reload the page",
+  "Your age": "Your age",
+  "Your city": "Your city",
+  "Your username": "Your username",
+  "Avatar URL": "Avatar URL"
 }

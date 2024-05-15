@@ -3,5 +3,11 @@
   "Language": "Русский",
   "Short lang": "Ru",
   "Loading": "Загрузка",
-  "The page was not found": "Страница не найдена"
+  "The page was not found": "Страница не найдена",
+  "Profile": "Профиль",
+  "Edit": "Редактировать",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Select your country": "Выберите страну",
+  "Select currency": "Выберите валюту"
 }

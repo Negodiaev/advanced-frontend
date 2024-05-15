@@ -19,12 +19,23 @@
     outline: 0;
   }
 
-  &_outlined {
+  &_outlined,
+  &_outlinedDanger {
     @extend %no-bg;
 
-    border: 1px solid var(--color-border);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 4px;
+  }
+
+  &_outlined {
+    border-color: var(--color-border);
     color: var(--color-border);
+  }
+
+  &_outlinedDanger {
+    border-color: var(--color-error-secondary);
+    color: var(--color-error-secondary);
   }
 
   &_contained {

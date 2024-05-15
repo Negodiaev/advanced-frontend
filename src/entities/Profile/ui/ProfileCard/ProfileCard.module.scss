@@ -2,20 +2,25 @@
   padding: 20px;
   border-radius: 8px;
   border: 1px solid var(--color-border);
+  transition: box-shadow 0.2s;
 
-  &__header {
-    margin-bottom: 24px;
+  &_editing {
+    box-shadow: 4px 8px 16px var(--color-shadow-10);
   }
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .data {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  align-self: center;
 }

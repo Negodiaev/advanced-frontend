@@ -4,16 +4,17 @@ import { classNames } from '../../lib/classNames/classNames';
 
 import styles from './Input.module.scss';
 
-type THTMLInputAttributes = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type THTMLInputAttributes = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'readOnly' | 'onChange'>;
 
 interface IInputProps extends THTMLInputAttributes {
-    value?: string;
+    value?: string | number;
+    readonly?: boolean;
     onChange?: (value: string) => void;
 }
 
 export const Input = memo((props: IInputProps) => {
   const {
-    type = 'text', name, placeholder, autoFocus = false, className, onChange, ...rest
+    type = 'text', name, placeholder, readonly, autoFocus = false, className, onChange, ...rest
   } = props;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -27,9 +28,10 @@ export const Input = memo((props: IInputProps) => {
         type={type}
         id={name}
         name={name}
+        readOnly={readonly}
         autoFocus={autoFocus}
         autoComplete="off"
-        className={classNames(styles.input, {}, [className])}
+        className={classNames(styles.input, { [styles.input_readonly]: readonly }, [className])}
         onChange={handleChange}
         {...rest}
       />

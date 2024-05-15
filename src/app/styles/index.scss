@@ -13,6 +13,7 @@ body {
   font-style: normal;
   font-weight: 400;
   min-height: 100%;
+  background-color: var(--color-bg-dark);
 }
 
 a {
@@ -20,14 +21,16 @@ a {
 }
 
 .app {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .content {
   display: flex;
+  height: calc(100% - var(--navbar-height));
 }
 
 .main {
+  overflow: auto;
   flex-grow: 1;
   padding: 20px;
 }

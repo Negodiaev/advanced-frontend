@@ -1,5 +1,7 @@
 import { memo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
+import { getUserAuthData } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonVariant } from 'shared/ui/Button';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
@@ -14,6 +16,7 @@ interface ISidebarProps {
 }
 
 export const Sidebar = memo(({ className }: ISidebarProps) => {
+  const isAuth = useSelector(getUserAuthData);
   const [isCollapsed, setCollapsed] = useState<boolean>(false);
 
   const handleToggle = async () => {
@@ -37,7 +40,11 @@ export const Sidebar = memo(({ className }: ISidebarProps) => {
       </Button>
       <nav>
         <ul className={styles.menu}>
-          {sidebarItemsList.map((item) => <li key={item.path}><SidebarItem item={item} collapsed={isCollapsed} /></li>)}
+          {sidebarItemsList.filter(({ authOnly }) => !(authOnly && !isAuth)).map((item) => (
+            <li key={item.path}>
+              <SidebarItem item={item} collapsed={isCollapsed} />
+            </li>
+          ))}
         </ul>
       </nav>
       <div className={classNames(styles.switchers, { [styles.switchers_collapsed]: isCollapsed })}>

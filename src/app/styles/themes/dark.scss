@@ -1,7 +1,7 @@
 .dark_theme {
   // Backgrounds
   --color-bg: #333231; // Main background
-  --color-bg-secondary: #242526; // Secondary background for paddings and separators
+  --color-bg-secondary: var(--color-bg-dark); // Secondary background for paddings and separators
 
   // Text
   --color-text: #e0e0e0; // Main text
@@ -20,4 +20,5 @@
 
   // Additional
   --color-info: #29b6f6; // Informational
+  --color-shadow-10: rgba(255 255 255 / 10%);
 }

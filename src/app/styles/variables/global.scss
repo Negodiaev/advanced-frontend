@@ -19,6 +19,7 @@
   // Backgrounds
   --color-bg: #fff; // Main background
   --color-bg-secondary: #f0f2f5; // Secondary background for paddings and separators
+  --color-bg-dark: #242526; // Dark background for the body and secondary background in the dark theme
 
   // Text
   --color-text: #373737; // Main text
@@ -38,6 +39,7 @@
   // Additional
   --color-info: #17a2b8; // Informational
   --color-overlay: rgba(0 0 0 / 60%); // Mostly for modal backgrounds
+  --color-shadow-10: rgba(0 0 0 / 10%);
 
   // Sizes
   --navbar-height: 56px;
