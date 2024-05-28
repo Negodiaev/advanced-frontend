@@ -2,7 +2,9 @@ import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
 import { IStateSchema } from 'app/providers/StoreProvider';
 
-type TActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>;
+type TActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAction<Return, Arg, {
+    rejectValue: RejectedValue
+}>;
 
 jest.mock('axios');
 
@@ -19,10 +21,10 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
 
   actionCreator: TActionCreatorType<Return, Arg, RejectedValue>;
 
-  constructor(actionCreator: TActionCreatorType<Return, Arg, RejectedValue>) {
+  constructor(actionCreator: TActionCreatorType<Return, Arg, RejectedValue>, state?: DeepPartial<IStateSchema>) {
     this.actionCreator = actionCreator;
     this.dispatch = jest.fn();
-    this.getState = jest.fn();
+    this.getState = jest.fn(() => state as IStateSchema);
     this.navigate = jest.fn();
     this.api = mockedAxios;
   }

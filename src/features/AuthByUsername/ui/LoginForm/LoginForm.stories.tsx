@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
-import { noop } from 'shared/lib';
+// Don't import this function from the public api due to a strange error about jest in Storybook
+import { noop } from 'shared/lib/noop/noop';
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
@@ -21,7 +22,13 @@ export const Default: Story = {
 };
 
 export const WithError: Story = {
-  decorators: [StoreDecorator({ loginForm: { username: 'querty', password: '12345', error: 'Incorrect login or password' } })],
+  decorators: [StoreDecorator({
+    loginForm: {
+      username: 'querty',
+      password: '12345',
+      error: 'Incorrect login or password',
+    },
+  })],
 };
 
 export const Loading: Story = {
@@ -33,9 +40,21 @@ export const DefaultDark: Story = {
 };
 
 export const WithErrorDark: Story = {
-  decorators: [StoreDecorator({ loginForm: { username: 'querty', password: '12345', error: 'Incorrect login or password' } }), ThemeDecorator(Theme.DARK)],
+  decorators: [StoreDecorator({
+    loginForm: {
+      username: 'querty',
+      password: '12345',
+      error: 'Incorrect login or password',
+    },
+  }), ThemeDecorator(Theme.DARK)],
 };
 
 export const isLoadingDark: Story = {
-  decorators: [StoreDecorator({ loginForm: { username: 'querty', password: '12345', isLoading: true } }), ThemeDecorator(Theme.DARK)],
+  decorators: [StoreDecorator({
+    loginForm: {
+      username: 'querty',
+      password: '12345',
+      isLoading: true,
+    },
+  }), ThemeDecorator(Theme.DARK)],
 };

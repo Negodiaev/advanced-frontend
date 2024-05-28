@@ -19,7 +19,7 @@ export default (env: IBuildEnv) => {
   const isDev = mode === 'development';
 
   const config: webpack.Configuration = buildWebpackConfig({
-    mode, paths, isDev, port: PORT, apiURL,
+    mode, paths, isDev, port: PORT, apiURL, project: 'frontend',
   });
 
   return config;

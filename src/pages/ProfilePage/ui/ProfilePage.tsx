@@ -1,18 +1,24 @@
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import {
   fetchProfileData,
-  getProfileError, getProfileForm,
-  getProfileIsLoading, getProfileReadonly, profileActions,
+  getProfileError,
+  getProfileForm,
+  getProfileIsLoading,
+  getProfileReadonly,
+  getProfileValidationErrors,
+  profileActions,
   ProfileCard,
-  profileReducer,
+  profileReducer, ProfileValidationError,
 } from 'entities/Profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, TReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/hooks';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
+import { Text, TextTheme } from 'shared/ui/Text';
 import { ProfilePageHeader } from '../ui/ProfilePageHeader/ProfilePageHeader';
 import styles from './ProfilePage.module.scss';
 
@@ -25,14 +31,25 @@ interface IProfilePageProps {
 }
 
 export default function ProfilePage({ className }: IProfilePageProps) {
+  const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const formErrors = useSelector(getProfileValidationErrors);
+  const formErrorTranslations = {
+    [ProfileValidationError.INCORRECT_USER_DATA]: t('Name and last name are required'),
+    [ProfileValidationError.INCORRECT_AGE]: t('Incorrect age'),
+    [ProfileValidationError.INCORRECT_CITY]: t('Incorrect city'),
+    [ProfileValidationError.NO_DATA]: t('No data'),
+    [ProfileValidationError.SERVER_ERROR]: t('Server error'),
+  };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const handleChangeName = useCallback((value: string) => {
@@ -77,6 +94,13 @@ export default function ProfilePage({ className }: IProfilePageProps) {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(styles.root, {}, [className])}>
         <ProfilePageHeader className={styles.root__header} />
+        {(formErrors && formErrors.length > 0) && formErrors.map((error) => (
+          <Text
+            theme={TextTheme.ERROR}
+            text={formErrorTranslations[error]}
+            key={error}
+          />
+        ))}
         <ProfileCard
           data={formData}
           isLoading={isLoading}

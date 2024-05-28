@@ -7,5 +7,10 @@
   "Your age": "Your age",
   "Your city": "Your city",
   "Your username": "Your username",
-  "Avatar URL": "Avatar URL"
+  "Avatar URL": "Avatar URL",
+  "Name and last name are required": "Name and last name are required",
+  "Incorrect age": "Incorrect age",
+  "Incorrect city": "Incorrect city",
+  "No data": "No data",
+  "Server error": "Server error when saving data"
 }
