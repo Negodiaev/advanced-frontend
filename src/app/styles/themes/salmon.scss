@@ -1,0 +1,24 @@
+.salmon_theme {
+  // Backgrounds
+  --color-bg: #fa8072; // Main background
+  --color-bg-secondary: #f85849; // Secondary background for paddings and separators
+
+  // Text
+  --color-text: #fbf5f4; // Main text
+  --color-text-secondary: #fbf5f4; // Secondary text
+
+  // UI elements
+  --color-border: #fbf5f4; // Borders and separators
+  --color-primary: #fbf5f4; // Primary accent color
+  --color-primary-light: #fbf5f4; // Light shade of primary color can be the same given the dark theme
+
+  // Statuses
+  --color-success: #20c997; // Success, confirmations
+  --color-error: #f44336; // Errors, warnings
+  --color-error-secondary: #dc3545; // Errors, warnings secondary
+  --color-warning: #ffc107; // Warning
+
+  // Additional
+  --color-info: #f8cf49; // Informational
+  --color-shadow-10: rgba(255 255 255 / 10%);
+}
