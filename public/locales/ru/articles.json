@@ -1,4 +1,6 @@
 {
   "Articles content": "Контент страницы статей",
-  "Article content": "Контент статьи"
+  "Article content": "Контент статьи",
+  "An article is not found": "Статья не найдена",
+  "An error occurred while uploading the article": "Произошла ошибка при загрузке статьи"
 }

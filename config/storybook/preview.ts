@@ -14,6 +14,13 @@ const preview: Preview = {
       },
     },
     layout: 'fullscreen',
+    backgrounds: {
+      values: [
+        { name: 'light', value: '#fff' },
+        { name: 'dark', value: '#333' },
+        { name: 'gray', value: '#a7a7a7' },
+      ],
+    },
   },
   decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator],
 };

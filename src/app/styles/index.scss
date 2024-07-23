@@ -23,6 +23,7 @@ a {
 
 .app {
   height: 100vh;
+  overflow: auto;
 }
 
 .content {
@@ -33,5 +34,5 @@ a {
 .main {
   overflow: auto;
   flex-grow: 1;
-  padding: 20px;
+  padding: 40px 60px;
 }

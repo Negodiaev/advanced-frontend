@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import ArticlesPage from './ArticlesPage';
 
 const meta: Meta<typeof ArticlesPage> = {
-  title: 'shared/ArticlesPage',
+  title: 'pages/ArticlesPage',
   component: ArticlesPage,
 };
 

@@ -10,7 +10,14 @@ export enum TextTheme {
 export enum TextAlign {
     LEFT = 'left',
     RIGHT = 'right',
-    CENTER = 'left',
+    CENTER = 'center',
+    JUSTIFY = 'justify',
+}
+
+export enum TextSize {
+    SM = 'sizeSM',
+    MD = 'sizeMD',
+    LG = 'sizeLG',
 }
 
 interface ITextProps {
@@ -18,22 +25,45 @@ interface ITextProps {
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize;
     className?: string;
 }
 
 export const Text = memo(({
-  title, text, theme = TextTheme.DEFAULT, align = TextAlign.LEFT, className,
+  title,
+  text,
+  theme = TextTheme.DEFAULT,
+  align = TextAlign.LEFT,
+  size = TextSize.MD,
+  className,
 }: ITextProps) => {
   const isErrorTheme = theme === TextTheme.ERROR;
   const mods: TMods = {
-    [styles.root_right]: align === TextAlign.RIGHT,
-    [styles.root_center]: align === TextAlign.CENTER,
+    // [styles[`root_${align}`]]: align === TextAlign.RIGHT,
+    // [styles.root_center]: align === TextAlign.CENTER,
+    // [styles.root_justify]: align === TextAlign.JUSTIFY,
   };
 
   return (
-    <div className={classNames(styles.root, mods, [className])}>
-      {title && <p className={classNames(styles.title, { [styles.text_error]: isErrorTheme })}>{title}</p>}
-      {text && <p className={classNames(styles.text, { [styles.text_error]: isErrorTheme })}>{text}</p>}
+    <div className={classNames(styles.root, mods, [styles[`root_${align}`], className])}>
+      {title && (
+        <p className={classNames(styles.title, {
+          [styles.text_error]: isErrorTheme,
+          [styles[`title_${size}`]]: true,
+        })}
+        >
+          {title}
+        </p>
+      )}
+      {text && (
+        <p className={classNames(styles.text, {
+          [styles.text_error]: isErrorTheme,
+          [styles[`text_${size}`]]: true,
+        })}
+        >
+          {text}
+        </p>
+      )}
     </div>
   );
 });

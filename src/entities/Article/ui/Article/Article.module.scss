@@ -1,0 +1,48 @@
+.root {
+  min-height: 100%;
+
+  &__intro {
+    margin-bottom: 32px;
+  }
+}
+
+.skeletons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.avatar {
+  display: block;
+  margin: 0 auto;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

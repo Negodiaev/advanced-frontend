@@ -20,6 +20,7 @@ $offset: 16px;
   position: absolute;
   bottom: 0;
   right: calc(var(--font-size-xl) * -1.5);
+  z-index: 1;
 }
 
 .menu {

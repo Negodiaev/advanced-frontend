@@ -8,6 +8,10 @@
   &_center {
     text-align: center;
   }
+
+  &_justify {
+    text-align: justify;
+  }
 }
 
 .title {
@@ -17,6 +21,18 @@
   &_error {
     color: var(--color-error);
   }
+
+  &_sizeSM {
+    font-size: var(--font-size-md);
+  }
+
+  &_sizeMD {
+    font-size: var(--font-size-lg);
+  }
+
+  &_sizeLG {
+    font-size: var(--font-size-xl);
+  }
 }
 
 .text {
@@ -25,5 +41,17 @@
 
   &_error {
     color: var(--color-error);
+  }
+
+  &_sizeSM {
+    font-size: var(--font-size-sm);
+  }
+
+  &_sizeMD {
+    font-size: var(--font-size-md);
+  }
+
+  &_sizeLG {
+    font-size: var(--font-size-lg);
   }
 }
